@@ -1,0 +1,3 @@
+﻿  main.c
+MSVCRT.lib(exe_winmain.obj) : error LNK2019: unresolved external symbol WinMain referenced in function "int __cdecl __scrt_common_main_seh(void)" (?__scrt_common_main_seh@@YAHXZ)
+bin\Release\Caracal Core.exe : fatal error LNK1120: 1 unresolved externals
