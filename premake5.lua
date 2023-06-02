@@ -6,20 +6,35 @@ workspace "Caracal"
    platforms { "Win64", "Linux" }
    objdir (src_dir .. "obj")
 
+function link_deps()
+   includedirs {
+      "ext/sdl2/include"
+   }
+
+   libdirs {
+      "ext/sdl2/lib/x64"
+   }
+
+   links {
+      "SDL2"
+   }
+end
 
 project "Caracal Core"
    kind "WindowedApp"
-   language "C"
+   language "C++"
    targetdir "bin/%{cfg.buildcfg}"
+   link_deps()
 
    files {
-         src_dir .. "**.c" ,
+         src_dir .. "**.cxx" ,
          src_dir .. "**.h"
       }
 
    filter { "platforms:Win64" }
       system "Windows"
       architecture "x64"
+      entrypoint "WinMainCRTStartup"
 
    filter { "platforms:Linux" }
       system "Linux"
