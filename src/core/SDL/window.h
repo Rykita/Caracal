@@ -7,6 +7,7 @@ public:
 	Window(int width, int height, std::string name);
 	~Window();
 	void SetTitle(const std::string name);
+	SDL_Window* GetSDLWindow();
 private:
 	int width;
 	int height;

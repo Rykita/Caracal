@@ -11,7 +11,6 @@ Window::Window(int width, int height, std::string name)
     //Get window surface
     screenSurface = SDL_GetWindowSurface(window);
 
-    //Fill the surface white
     SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 255, 255, 255));
 
     SDL_UpdateWindowSurface(window);
@@ -26,4 +25,9 @@ Window::~Window()
 void Window::SetTitle(const std::string name)
 {
     SDL_SetWindowTitle(window, name.c_str());
+}
+
+SDL_Window* Window::GetSDLWindow()
+{
+    return window;
 }

@@ -1,10 +1,7 @@
 #include <iostream>
 #include "SDL/window.h"
+#include "SDL/input.h"
 
-/* 
-I'm gonna go on a short rant: I have to use WinMain() on WIN32/64 instead of main()... because?? I guess
-Microsoft really hates portability...
-*/
 
 int main(int argc, char* argv[])
 {
@@ -26,6 +23,9 @@ int main(int argc, char* argv[])
 			{
 				case SDL_QUIT:
 					quit = true; break;
+				case SDL_KEYDOWN:
+					// Notify input class!!
+					InputHnd()->SendInputMsg(event.key.keysym); break;
 			}
 		}
 	}
