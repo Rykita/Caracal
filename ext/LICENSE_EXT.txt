@@ -1,0 +1,8 @@
+# Caracal provides pre-compiled binaries of projects that are external and not part of Caracal. In most cases you can easily replace/switch the binaries around and do as you wish.
+# Although, in respect to the original authors of external libraries that Caracal may utilize, this file serves as a comprehensive list of resources for info about each dependency,
+# or at the very least the author/company.
+
+Premake 5 - https://premake.github.io/
+Vulkan - https://www.vulkan.org/
+SDL 2 - https://www.libsdl.org/
+Direct3D - Microsoft
